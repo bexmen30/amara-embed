@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Amara Embed Generator</title>
+</head>
+
+<body>
+
+<h2>Amara Video Embed Generator</h2>
+
+<p>Paste the full Amara video URL below:</p>
+
+<input
+  id="amaraUrl"
+  type="text"
+  style="width:100%; max-width:700px;"
+  placeholder="https://amara.org/videos/..."
+>
+
+<button onclick="generateCode()">Generate Blackboard Code</button>
+
+<h3>Blackboard Code</h3>
+
+<textarea
+  id="output"
+  style="width:100%; max-width:700px; height:180px;"
+  readonly>
+</textarea>
+
+<script>
+function generateCode() {
+  const amaraUrl = document.getElementById("amaraUrl").value.trim();
+
+  if (!amaraUrl) {
+    alert("Please paste an Amara video URL.");
+    return;
+  }
+
+  const encodedUrl = encodeURIComponent(amaraUrl);
+
+  const code = `<div style="width:100%; max-width:1200px; aspect-ratio:16/10;">
+  <iframe
+    src="https://bexmen30.github.io/amara-embed/?url=${encodedUrl}"
+    style="width:100%; height:100%; border:0;"
+    allowfullscreen>
+  </iframe>
+</div>`;
+
+  document.getElementById("output").value = code;
+}
+</script>
+
+</body>
+</html>
