@@ -7,11 +7,19 @@
 <body>
 
 <div
+  id="amara-player"
   class="amara-embed"
-  data-video-id="dIsWtg2NJ00S"
   data-team="bex"
   data-show-subtitles-default="true">
 </div>
+
+<script>
+  const videoId = window.location.pathname.split("/").filter(Boolean).pop();
+
+  document
+    .getElementById("amara-player")
+    .setAttribute("data-video-id", videoId);
+</script>
 
 <script
   type="text/javascript"
