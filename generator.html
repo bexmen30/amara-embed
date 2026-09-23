@@ -39,12 +39,13 @@ function generateCode() {
 
   const encodedUrl = encodeURIComponent(amaraUrl);
 
- const code = `<iframe
-  src="https://bexmen30.github.io/amara-embed/?url=${encodedUrl}"
-  style="display:block; width:100%; max-width:1200px; height:750px; border:0;"
-  allowfullscreen
-  contenteditable="false">
-</iframe>`;
+ const code = `<div style="width:100%; max-width:1200px; line-height:0;">
+  <iframe
+    src="https://bexmen30.github.io/amara-embed/?url=${encodedUrl}"
+    style="display:block; width:100%; max-width:1200px; height:750px; border:0;"
+    allowfullscreen>
+  </iframe>
+</div>`;
 
   document.getElementById("output").value = code;
 }
