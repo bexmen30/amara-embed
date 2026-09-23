@@ -42,7 +42,8 @@ function generateCode() {
  const code = `<iframe
   src="https://bexmen30.github.io/amara-embed/?url=${encodedUrl}"
   style="display:block; width:100%; max-width:1200px; height:750px; border:0;"
-  allowfullscreen>
+  allowfullscreen
+  contenteditable="false">
 </iframe>`;
 
   document.getElementById("output").value = code;
